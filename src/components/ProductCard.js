@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
   productPrice: {
     fontSize: 16,
     fontWeight: '800',
-    color: '#111827',
+    color: '#6B7280',
   },
   cartButton: {
     padding: 2,
