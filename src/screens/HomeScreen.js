@@ -55,6 +55,10 @@ export default function HomeScreen({ navigation }) {
             style={styles.bannerImage}
             resizeMode="cover"
           />
+          <View style={styles.bannerTextOverlay}>
+            <Text style={styles.bannerSubtitle}>New Release</Text>
+            <Text style={styles.bannerTitle}>OLEVS 5 V13”</Text>
+          </View>
         </View>
 
         {/* Action Controls: Sort, Filter, Cart, Search */}
@@ -235,8 +239,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logoImage: {
-    width: 80,
-    height: 38,
+    width: 85,
+    height: 85,
   },
   bannerContainer: {
     width: '100%',
@@ -245,10 +249,32 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     backgroundColor: '#000000',
     marginBottom: 16,
+    position: 'relative',
   },
   bannerImage: {
     width: '100%',
     height: '100%',
+  },
+  bannerTextOverlay: {
+    position: 'absolute',
+    top: 16,
+    right: 18,
+    alignItems: 'flex-end',
+    zIndex: 2,
+  },
+  bannerSubtitle: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '700',
+    marginBottom: 4,
+    letterSpacing: 0.2,
+  },
+  bannerTitle: {
+    color: '#FFFFFF',
+    fontSize: 20,
+    fontWeight: '900',
+    letterSpacing: 1.2,
+    textTransform: 'uppercase',
   },
   controlsRow: {
     flexDirection: 'row',

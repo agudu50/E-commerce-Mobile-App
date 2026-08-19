@@ -38,13 +38,6 @@ export default function ProductCard({
             color="#111827"
           />
         </TouchableOpacity>
-
-        {rating !== undefined && (
-          <View style={styles.ratingBadge}>
-            <Ionicons name="star" size={12} color="#F59E0B" />
-            <Text style={styles.ratingText}>{Number(rating).toFixed(1)}</Text>
-          </View>
-        )}
       </View>
 
       {/* Product Image */}
@@ -102,22 +95,8 @@ const styles = StyleSheet.create({
   },
   topRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     alignItems: 'center',
-  },
-  ratingBadge: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.7)',
-    paddingHorizontal: 6,
-    paddingVertical: 2,
-    borderRadius: 10,
-  },
-  ratingText: {
-    fontSize: 11,
-    fontWeight: '700',
-    color: '#1F2937',
-    marginLeft: 3,
   },
   imageWrapper: {
     height: 140,

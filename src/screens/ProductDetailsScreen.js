@@ -106,23 +106,7 @@ export default function ProductDetailsScreen({ route, navigation }) {
 
           <Text style={styles.productName}>{product.name}</Text>
 
-          {/* Rating & Review stats */}
-          <View style={styles.ratingRow}>
-            <View style={styles.starsContainer}>
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Ionicons
-                  key={star}
-                  name={star <= Math.floor(product.rating || 5) ? 'star' : 'star-half'}
-                  size={16}
-                  color="#F59E0B"
-                />
-              ))}
-            </View>
-            <Text style={styles.ratingScore}>{product.rating} / 5.0</Text>
-            {product.reviewsCount && (
-              <Text style={styles.reviewsCount}>({product.reviewsCount} reviews)</Text>
-            )}
-          </View>
+
 
           {/* Price */}
           <View style={styles.priceRow}>
