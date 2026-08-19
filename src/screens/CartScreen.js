@@ -216,9 +216,9 @@ const styles = StyleSheet.create({
     borderColor: '#F3F4F6',
   },
   thumbnailWrapper: {
-    width: 80,
-    height: 80,
-    borderRadius: 12,
+    width: 90,
+    height: 90,
+    borderRadius: 14,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 6,

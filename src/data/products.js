@@ -50,5 +50,57 @@ export const PRODUCTS = [
     category: 'Footwear',
     description:
       'The 2024 Nike Running edition features responsive foam cushioning, high-traction grooved outsoles, and a dynamic mesh upper for breathability and agility.'
+  },
+  {
+    id: '5',
+    name: 'Air pro bluetooth earphones',
+    price: 19.99,
+    rating: 4.8,
+    reviewsCount: 184,
+    image: require('../../assets/airpro.png'),
+    bgColor: '#EDE9FE',
+    isFavorite: false,
+    category: 'Audio',
+    description:
+      'True wireless stereo bluetooth earbuds with ergonomic in-ear fit, smart charging case, crystal-clear call quality, and instant auto-pairing.'
+  },
+  {
+    id: '6',
+    name: 'Curlogy 100g',
+    price: 2.99,
+    rating: 4.9,
+    reviewsCount: 420,
+    image: require('../../assets/curology.png'),
+    bgColor: '#FEF9C3',
+    isFavorite: false,
+    category: 'Skincare',
+    description:
+      'Dermatologist-developed custom skincare set designed to cleanse, nourish, and protect your skin barrier with clinically proven ingredients.'
+  },
+  {
+    id: '7',
+    name: 'Women Perfume Latest',
+    price: 8.99,
+    rating: 4.7,
+    reviewsCount: 88,
+    image: require('../../assets/perfume.png'),
+    bgColor: '#FEF9C3',
+    isFavorite: false,
+    category: 'Fragrance',
+    description:
+      'Exquisite French-inspired luxury fragrance infused with radiant floral accords, soft amber undertones, and a long-lasting signature scent.'
+  },
+  {
+    id: '8',
+    name: 'Premium Red Office dress',
+    price: 39.99,
+    rating: 4.8,
+    reviewsCount: 152,
+    image: require('../../assets/office-dress.png'),
+    bgColor: '#D2F4DC',
+    isFavorite: false,
+    category: 'Clothing',
+    description:
+      'Sophisticated double-breasted red blazer dress crafted from structured premium crepe fabric, perfect for modern professional and formal occasions.'
   }
 ];

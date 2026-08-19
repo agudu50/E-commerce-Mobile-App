@@ -72,7 +72,7 @@ export default function ProductCard({
         >
           <MaterialCommunityIcons
             name="cart-outline"
-            size={20}
+            size={24}
             color="#111827"
           />
         </TouchableOpacity>
@@ -114,14 +114,14 @@ const styles = StyleSheet.create({
     marginLeft: 3,
   },
   imageWrapper: {
-    height: 110,
+    height: 130,
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 8,
+    marginVertical: 6,
   },
   productImage: {
-    width: '90%',
+    width: '95%',
     height: '100%',
   },
   productName: {
