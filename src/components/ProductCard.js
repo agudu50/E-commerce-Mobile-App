@@ -13,6 +13,8 @@ export default function ProductCard({
   rating,
   bgColor = '#F3F4F6',
   isFavorite = false,
+  imageStyle,
+  imageWrapperStyle,
   onPress,
   onAddToCart,
 }) {
@@ -46,8 +48,12 @@ export default function ProductCard({
       </View>
 
       {/* Product Image */}
-      <View style={styles.imageWrapper}>
-        <Image source={image} style={styles.productImage} resizeMode="contain" />
+      <View style={[styles.imageWrapper, imageWrapperStyle]}>
+        <Image
+          source={image}
+          style={[styles.productImage, imageStyle]}
+          resizeMode="contain"
+        />
       </View>
 
       {/* Product Name */}
@@ -114,14 +120,14 @@ const styles = StyleSheet.create({
     marginLeft: 3,
   },
   imageWrapper: {
-    height: 130,
+    height: 140,
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 6,
+    marginVertical: 4,
   },
   productImage: {
-    width: '95%',
+    width: '100%',
     height: '100%',
   },
   productName: {

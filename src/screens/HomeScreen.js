@@ -125,6 +125,8 @@ export default function HomeScreen({ navigation }) {
                 rating={product.rating}
                 bgColor={product.bgColor}
                 isFavorite={product.isFavorite}
+                imageStyle={product.imageStyle}
+                imageWrapperStyle={product.imageWrapperStyle}
                 onPress={() =>
                   navigation.navigate('ProductDetails', { product })
                 }
@@ -145,6 +147,8 @@ export default function HomeScreen({ navigation }) {
                   rating={product.rating}
                   bgColor={product.bgColor}
                   isFavorite={product.isFavorite}
+                  imageStyle={product.imageStyle}
+                  imageWrapperStyle={product.imageWrapperStyle}
                   onPress={() =>
                     navigation.navigate('ProductDetails', { product })
                   }
@@ -190,6 +194,8 @@ export default function HomeScreen({ navigation }) {
                   rating={product.rating}
                   bgColor={product.bgColor}
                   isFavorite={product.isFavorite}
+                  imageStyle={product.imageStyle}
+                  imageWrapperStyle={product.imageWrapperStyle}
                   onPress={() =>
                     navigation.navigate('ProductDetails', { product })
                   }
