@@ -286,8 +286,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logoImage: {
-    width: 65,
-    height: 48,
+    width: 85,
+    height: 85,
   },
   scrollContent: {
     flexGrow: 1,

@@ -199,8 +199,8 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   logoImage: {
-    width: 90,
-    height: 38,
+    width: 85,
+    height: 85,
   },
   avatarWrapper: {
     position: 'relative',
