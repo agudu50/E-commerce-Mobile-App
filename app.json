@@ -4,7 +4,7 @@
     "slug": "dcit-324-assign3",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/ShopEase.png",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true
