@@ -26,6 +26,7 @@ export const PRODUCTS = [
     reviewsCount: 94,
     image: require('../../assets/wrist-watch.png'),
     bgColor: '#EDE8FD',
+    accentColor: '#6135FF',
     isFavorite: false,
     category: 'Electronics',
     variantLabel: 'Space Gray/Black',

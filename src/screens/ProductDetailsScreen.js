@@ -39,6 +39,18 @@ export default function ProductDetailsScreen({ route, navigation }) {
     { id: '2', name: 'Option 2', image: product.image, isDark: false },
   ];
 
+  const accentColor =
+    product.accentColor ||
+    (product.name?.toLowerCase().includes('wrist watch') || product.id === '2'
+      ? '#6135FF'
+      : '#3CD049');
+
+  const priceBadgeColor =
+    product.priceBadgeColor ||
+    (product.name?.toLowerCase().includes('wrist watch') || product.id === '2'
+      ? '#6135FF'
+      : '#50D86A');
+
   const currentImage = options[selectedOptionIndex]?.image || product.image;
 
   const handleIncrease = () => {
@@ -156,8 +168,8 @@ export default function ProductDetailsScreen({ route, navigation }) {
               {product.variantLabel || 'White/Black'}
             </Text>
 
-            {/* Green Price Badge */}
-            <View style={styles.pricePill}>
+            {/* Price Badge */}
+            <View style={[styles.pricePill, { backgroundColor: priceBadgeColor }]}>
               <Text style={styles.priceText}>
                 ${Number(product.price).toFixed(2)}
               </Text>
@@ -218,7 +230,7 @@ export default function ProductDetailsScreen({ route, navigation }) {
           {/* Bottom Action Buttons: [Buy now] [Add to cart] */}
           <View style={styles.actionButtonsRow}>
             <TouchableOpacity
-              style={styles.buyNowButton}
+              style={[styles.buyNowButton, { backgroundColor: accentColor }]}
               onPress={handleBuyNow}
               activeOpacity={0.85}
             >
@@ -226,13 +238,18 @@ export default function ProductDetailsScreen({ route, navigation }) {
             </TouchableOpacity>
 
             <TouchableOpacity
-              style={[styles.addToCartButton, added && styles.addedButtonState]}
+              style={[
+                styles.addToCartButton,
+                { borderColor: accentColor },
+                added && { backgroundColor: accentColor },
+              ]}
               onPress={handleAddToCart}
               activeOpacity={0.85}
             >
               <Text
                 style={[
                   styles.addToCartText,
+                  { color: accentColor },
                   added && styles.addedButtonTextState,
                 ]}
               >
