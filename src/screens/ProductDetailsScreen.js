@@ -147,70 +147,72 @@ export default function ProductDetailsScreen({ route, navigation }) {
 
         {/* Product Details Information */}
         <View style={styles.detailsContainer}>
-          {/* Product Title */}
-          <Text style={styles.productTitle}>{product.name}</Text>
+          <View style={styles.topDetailsGroup}>
+            {/* Product Title */}
+            <Text style={styles.productTitle}>{product.name}</Text>
 
-          {/* Color / Variant Subtitle */}
-          <Text style={styles.variantSubtitle}>
-            {product.variantLabel || 'White/Black'}
-          </Text>
-
-          {/* Green Price Badge */}
-          <View style={styles.pricePill}>
-            <Text style={styles.priceText}>
-              ${Number(product.price).toFixed(2)}
+            {/* Color / Variant Subtitle */}
+            <Text style={styles.variantSubtitle}>
+              {product.variantLabel || 'White/Black'}
             </Text>
-          </View>
 
-          {/* Available Options Label */}
-          <Text style={styles.optionsLabel}>Available Options</Text>
+            {/* Green Price Badge */}
+            <View style={styles.pricePill}>
+              <Text style={styles.priceText}>
+                ${Number(product.price).toFixed(2)}
+              </Text>
+            </View>
 
-          {/* Options Thumbnail Cards */}
-          <View style={styles.optionsRow}>
-            {options.map((option, index) => {
-              const isSelected = selectedOptionIndex === index;
-              return (
-                <TouchableOpacity
-                  key={option.id || index}
-                  activeOpacity={0.8}
-                  style={[
-                    styles.optionCard,
-                    isSelected
-                      ? styles.optionCardSelected
-                      : styles.optionCardUnselected,
-                  ]}
-                  onPress={() => setSelectedOptionIndex(index)}
-                >
-                  <Image
-                    source={option.image}
-                    style={styles.optionImage}
-                    resizeMode="contain"
-                  />
-                </TouchableOpacity>
-              );
-            })}
-          </View>
+            {/* Available Options Label */}
+            <Text style={styles.optionsLabel}>Available Options</Text>
 
-          {/* Quantity Selector: [+]  Qty  [-] */}
-          <View style={styles.quantityRow}>
-            <TouchableOpacity
-              style={styles.qtyBox}
-              onPress={handleIncrease}
-              activeOpacity={0.7}
-            >
-              <Ionicons name="add" size={20} color="#FFFFFF" />
-            </TouchableOpacity>
+            {/* Options Thumbnail Cards */}
+            <View style={styles.optionsRow}>
+              {options.map((option, index) => {
+                const isSelected = selectedOptionIndex === index;
+                return (
+                  <TouchableOpacity
+                    key={option.id || index}
+                    activeOpacity={0.8}
+                    style={[
+                      styles.optionCard,
+                      isSelected
+                        ? styles.optionCardSelected
+                        : styles.optionCardUnselected,
+                    ]}
+                    onPress={() => setSelectedOptionIndex(index)}
+                  >
+                    <Image
+                      source={option.image}
+                      style={styles.optionImage}
+                      resizeMode="contain"
+                    />
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
 
-            <Text style={styles.qtyText}>{quantity}</Text>
+            {/* Quantity Selector: [+]  Qty  [-] */}
+            <View style={styles.quantityRow}>
+              <TouchableOpacity
+                style={styles.qtyBox}
+                onPress={handleIncrease}
+                activeOpacity={0.7}
+              >
+                <Ionicons name="add" size={20} color="#FFFFFF" />
+              </TouchableOpacity>
 
-            <TouchableOpacity
-              style={[styles.qtyBox, quantity === 1 && styles.qtyBoxDisabled]}
-              onPress={handleDecrease}
-              disabled={quantity === 1}
-              activeOpacity={0.7}
-            >
-              <Ionicons name="remove" size={20} color="#FFFFFF" />
-            </TouchableOpacity>
+              <Text style={styles.qtyText}>{quantity}</Text>
+
+              <TouchableOpacity
+                style={[styles.qtyBox, quantity === 1 && styles.qtyBoxDisabled]}
+                onPress={handleDecrease}
+                disabled={quantity === 1}
+                activeOpacity={0.7}
+              >
+                <Ionicons name="remove" size={20} color="#FFFFFF" />
+              </TouchableOpacity>
+            </View>
           </View>
 
           {/* Bottom Action Buttons: [Buy now] [Add to cart] */}
@@ -271,6 +273,7 @@ const styles = StyleSheet.create({
     height: 48,
   },
   scrollContent: {
+    flexGrow: 1,
     paddingBottom: 24,
   },
   heroCard: {
@@ -337,20 +340,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#60A5FA',
   },
   detailsContainer: {
+    flex: 1,
     paddingHorizontal: 20,
+    justifyContent: 'space-between',
   },
   productTitle: {
     fontSize: 20,
     fontWeight: '800',
     color: '#111827',
     lineHeight: 26,
-    marginBottom: 6,
+    marginBottom: 15,
   },
   variantSubtitle: {
     fontSize: 15,
     fontWeight: '700',
     color: '#111827',
-    marginBottom: 12,
+    marginBottom: 35,
   },
   pricePill: {
     backgroundColor: '#50D86A',
@@ -358,7 +363,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 6,
     alignSelf: 'flex-start',
-    marginBottom: 14,
+    marginBottom: 15,
   },
   priceText: {
     color: '#FFFFFF',
@@ -369,21 +374,22 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '600',
     color: '#9CA3AF',
-    marginBottom: 10,
+    marginBottom: 35,
   },
   optionsRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 12,
-    marginBottom: 18,
+    gap: 16,
+    marginBottom: 35,
   },
   optionCard: {
-    width: 78,
-    height: 82,
-    borderRadius: 12,
+    width: 86,
+    height: 88,
+    borderRadius: 14,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 6,
+    overflow: 'hidden',
   },
   optionCardSelected: {
     backgroundColor: '#FFFFFF',
@@ -402,7 +408,8 @@ const styles = StyleSheet.create({
   quantityRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 26,
+    marginTop: 4,
+    marginBottom: 16,
   },
   qtyBox: {
     width: 32,
@@ -425,6 +432,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 12,
+    marginTop: 48,
+    paddingBottom: 10,
   },
   buyNowButton: {
     backgroundColor: '#3CD049',
